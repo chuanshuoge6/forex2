@@ -32,7 +32,8 @@ export default function App() {
   const [convert_currency, setconvert_currency] = useState(null)
   const [base_or_conversion, setbase_or_conversion] = useState(false)
   const [show_flags, setshow_flags] = useState(false)
-  const access_key = "816fa3bb7980076eb8bc623e55617ab6"
+  //const access_key = "816fa3bb7980076eb8bc623e55617ab6"
+  const access_key = "5aa9cc319da4351462a7df30b56165e4"
 
   useEffect(() => {
     initializeApp()
@@ -114,8 +115,7 @@ export default function App() {
     setconvert_currency(b)
 
     const d = new Date()
-    const end = d.toISOString().split('T')[0]
-    d.setDate(-n)
+    d.setDate(d.getDate() - n)
     const start = d.toISOString().split('T')[0]
 
     const url = 'http://api.exchangeratesapi.io/v1/' + start
